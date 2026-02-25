@@ -9,7 +9,7 @@ class Solution:
             x = points[i][0]
             y = points[i][1]
             
-            distance = x * x + y * y
+            distance = x*x+y*y
             
             heapq.heappush(heap, (-distance, points[i]))
             
