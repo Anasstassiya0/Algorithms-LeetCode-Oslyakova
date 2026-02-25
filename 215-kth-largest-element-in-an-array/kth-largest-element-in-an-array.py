@@ -1,12 +1,14 @@
-
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
-        min_heap = []
+        # Превращаем список в max-heap через отрицательные значения
+        nums = [-num for num in nums]
         
-        for num in nums:
-            heapq.heappush(min_heap, num)
-            
-            if len(min_heap) > k:
-                heapq.heappop(min_heap)
+        # Преобразуем список в кучу за O(n)
+        heapq.heapify(nums)
         
-        return min_heap[0]
+        # Удаляем k-1 самых больших элементов
+        for _ in range(k - 1):
+            heapq.heappop(nums)
+        
+        # Следующий элемент — это k-й наибольший
+        return -heapq.heappop(nums)
