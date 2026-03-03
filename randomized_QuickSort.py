@@ -18,4 +18,5 @@ def randomized_quicksort(arr, low, high): #сортируем массив на 
 num = [9, 3, 7, 1, 8, 2, 5]
 print("Исходный массив:", num)
 randomized_quicksort(num, 0, len(num) - 1)
+
 print("Отсортированный:", num)
