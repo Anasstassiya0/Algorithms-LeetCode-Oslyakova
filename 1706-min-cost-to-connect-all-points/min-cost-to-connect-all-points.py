@@ -8,7 +8,6 @@ class Solution:
         result = 0  # итог        
         for _ in range(n):
             u = -1
-            
             # ближайшая точка
             for i in range(n):
                 if not used[i] and (u == -1 or cost[i] < cost[u]):
